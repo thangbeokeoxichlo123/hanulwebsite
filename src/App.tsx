@@ -538,7 +538,7 @@ export default function App() {
               {/* Main Action Image */}
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_0_50px_rgba(239,68,68,0.3)] border-4 border-white/10">
                 <img 
-                  src="1.png" 
+                  src="1.jpg" 
                   alt="Taekwondo Class Action" 
                   className="w-full h-auto object-cover"
                   referrerPolicy="no-referrer"
@@ -560,7 +560,7 @@ export default function App() {
                 className="absolute -top-10 -left-10 w-48 h-48 rounded-3xl overflow-hidden border-4 border-red-600 shadow-2xl z-20 hidden md:block"
               >
                 <img 
-                  src="https://picsum.photos/seed/taekwondo-kick/400/400" 
+                  src="2.png" 
                   alt="Class Entry" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
