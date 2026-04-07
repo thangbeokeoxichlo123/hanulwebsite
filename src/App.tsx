@@ -1131,7 +1131,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-4">
               <img 
-                src="/Logo.png" 
+                src="Logo.png" 
                 alt="Hanul Logo" 
                 className="h-16 w-auto brightness-0 invert"
                 onError={(e) => {
