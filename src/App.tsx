@@ -538,7 +538,7 @@ export default function App() {
               {/* Main Action Image */}
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_0_50px_rgba(239,68,68,0.3)] border-4 border-white/10">
                 <img 
-                  src="https://picsum.photos/seed/taekwondo-action/1000/1200" 
+                  src="1.png" 
                   alt="Taekwondo Class Action" 
                   className="w-full h-auto object-cover"
                   referrerPolicy="no-referrer"
@@ -1131,7 +1131,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="flex items-center gap-4">
               <img 
-                src="/input_file_0.png" 
+                src="/Logo.png" 
                 alt="Hanul Logo" 
                 className="h-16 w-auto brightness-0 invert"
                 onError={(e) => {
