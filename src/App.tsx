@@ -585,14 +585,14 @@ export default function App() {
             >
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-blue-50">
                 <img 
-                  src="https://picsum.photos/seed/taekwondo-kids/800/1000" 
+                  src="113.png" 
                   alt="Toddler Taekwondo" 
                   className="w-full h-auto object-cover"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-10 right-10 bg-accent text-slate-900 p-6 rounded-3xl shadow-xl rotate-12">
-                  <p className="text-xs font-black uppercase tracking-widest mb-1">Ưu đãi mới</p>
-                  <p className="text-3xl font-black tracking-tighter">GIẢM 50%</p>
+                  <p className="text-xs font-black uppercase tracking-widest mb-1">Ưu đãi học viên mới</p>
+                  <p className="text-3xl font-black tracking-tighter">MIỄN HỌC PHÍ</p>
                   <p className="text-sm font-bold">Tháng đầu tiên</p>
                 </div>
               </div>
@@ -881,7 +881,7 @@ export default function App() {
                 className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10"
               >
                 <img 
-                  src={`https://picsum.photos/seed/taekwondo-training-${index}/600/800`} 
+                  src="113.png" 
                   alt={service.title} 
                   className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
                   referrerPolicy="no-referrer"
