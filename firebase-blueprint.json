@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Registration": {
+      "title": "Registration",
+      "description": "A student registration for Taekwondo classes.",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "Full name of the student."
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Contact phone number."
+        },
+        "classType": {
+          "type": "string",
+          "description": "The type of class (e.g., 8 sessions, 12 sessions, Private)."
+        },
+        "additionalServices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional services like Height Growth or Weight Loss."
+        },
+        "message": {
+          "type": "string",
+          "description": "Optional message from the user."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the registration was created."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "contacted", "enrolled"],
+          "description": "The status of the registration."
+        }
+      },
+      "required": ["fullName", "phoneNumber", "classType", "createdAt", "status"]
+    }
+  },
+  "firestore": {
+    "/registrations/{registrationId}": {
+      "schema": "Registration",
+      "description": "Collection of student registrations."
+    }
+  }
+}

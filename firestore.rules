@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: registrations
+    // Document ID: auto-generated
+    // Fields:
+    //   - fullName: string (required, 1-100 chars)
+    //   - phoneNumber: string (required, 1-20 chars)
+    //   - classType: string (required, 1-50 chars)
+    //   - additionalServices: list (optional, max 5 items)
+    //   - message: string (optional, max 500 chars)
+    //   - createdAt: timestamp (required)
+    //   - status: string (required, enum: ['pending', 'contacted', 'enrolled'])
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
+          (request.auth.token.email == "Thangbeokeoxichlo123@gmail.com" && request.auth.token.email_verified == true));
+    }
+
+    function isValidEmail(email) {
+      return email is string &&
+        email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidRegistration(data) {
+      let requiredFields = ['fullName', 'phoneNumber', 'classType', 'createdAt', 'status'];
+      let allowedFields = ['fullName', 'phoneNumber', 'classType', 'additionalServices', 'message', 'createdAt', 'status'];
+      
+      return data.keys().hasAll(requiredFields) &&
+             data.keys().hasOnly(allowedFields) &&
+             data.fullName is string && data.fullName.size() > 0 && data.fullName.size() <= 100 &&
+             data.phoneNumber is string && data.phoneNumber.size() > 0 && data.phoneNumber.size() <= 20 &&
+             data.classType is string && data.classType.size() > 0 && data.classType.size() <= 50 &&
+             (!('additionalServices' in data) || (data.additionalServices is list && data.additionalServices.size() <= 5)) &&
+             (!('message' in data) || (data.message is string && data.message.size() <= 500)) &&
+             data.createdAt is timestamp &&
+             data.status in ['pending', 'contacted', 'enrolled'];
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /registrations/{registrationId} {
+      // Allow anyone to create a registration (public form)
+      allow create: if isValidRegistration(request.resource.data) && request.resource.data.status == 'pending';
+      
+      // Only admins can read, update or delete registrations
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /users/{userId} {
+      // Users can read their own profile, admins can read all
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      
+      // Only admins can create or update user roles
+      allow write: if isAdmin();
+    }
+  }
+}
