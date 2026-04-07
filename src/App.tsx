@@ -591,8 +591,8 @@ export default function App() {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-10 right-10 bg-accent text-slate-900 p-6 rounded-3xl shadow-xl rotate-12">
-                  <p className="text-xs font-black uppercase tracking-widest mb-1">Ưu đãi học viên mới</p>
-                  <p className="text-3xl font-black tracking-tighter">MIỄN HỌC PHÍ</p>
+                  <p className="text-xs font-black uppercase tracking-widest mb-1">Ưu đãi</p>
+                  <p className="text-3xl font-black tracking-tighter">FREE 100%</p>
                   <p className="text-sm font-bold">Tháng đầu tiên</p>
                 </div>
               </div>
