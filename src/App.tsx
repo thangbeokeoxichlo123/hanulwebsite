@@ -546,7 +546,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
                 <div className="absolute bottom-10 left-10">
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-1 h-red-500 bg-red-500"></div>
+                    </div>
                     
                   </div>
                   
