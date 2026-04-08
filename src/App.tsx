@@ -547,9 +547,9 @@ export default function App() {
                 <div className="absolute bottom-10 left-10">
                   <div className="flex items-center gap-4 mb-2">
                     <div className="w-12 h-1 h-red-500 bg-red-500"></div>
-                    <p className="text-red-500 font-black uppercase tracking-widest text-sm">Lớp tập phong trào</p>
+                    
                   </div>
-                  <p className="text-4xl font-black italic uppercase tracking-tighter">Sôi động & Quyết tâm</p>
+                  
                 </div>
               </div>
               
