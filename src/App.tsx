@@ -138,21 +138,25 @@ const SERVICES = [
     title: "Tập luyện Taekwondo",
     description: "Chương trình đào tạo bài bản từ cơ bản đến nâng cao cho mọi lứa tuổi.",
     icon: <Award className="w-6 h-6" />,
+image: "112.png",
   },
   {
     title: "Tăng chiều cao",
     description: "Các bài tập chuyên biệt giúp kích thích phát triển chiều cao tối ưu cho trẻ.",
     icon: <TrendingUp className="w-6 h-6" />,
+image: "114.png",
   },
   {
     title: "Giảm cân & Thể lực",
     description: "Đốt cháy năng lượng hiệu quả qua các bài tập võ thuật cường độ cao.",
     icon: <Zap className="w-6 h-6" />,
+image: "115.png",
   },
   {
     title: "Dạy kèm & Nhào lộn",
     description: "Kỹ thuật nhào lộn nghệ thuật và các lớp dạy kèm kỹ năng đặc biệt.",
     icon: <UserCheck className="w-6 h-6" />,
+image: "116.png",
   },
 ];
 
@@ -546,7 +550,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
                 <div className="absolute bottom-10 left-10">
                   <div className="flex items-center gap-4 mb-2">
-                    </div>
+                    <div className="w-12 h-1 h-red-500 bg-red-500"></div>
                     
                   </div>
                   
@@ -881,10 +885,10 @@ export default function App() {
                 className="group relative h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10"
               >
                 <img 
-                  src="112.png" 
-                  alt={service.title} 
-                  className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
-                  referrerPolicy="no-referrer"
+                  src={service.image}
+  alt={service.title} 
+  className="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500"
+  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-slate-900 via-transparent to-transparent">
                   <div className="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-red-900/40">
